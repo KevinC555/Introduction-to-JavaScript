@@ -114,22 +114,26 @@ NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.449
 function hungryDog(weight, age) {
 	if (age < 4 / 12) {
 		return 0.1 * weight;
+	} else if (age >= 1 && weight <= 5) {
+		return weight * .05;
 	} else if (age < 7 / 12) {
-		return 0.05 * weight;
+		return 0.04 * weight;
 	} else if (age >= 7 / 12 && age < 1) {
-		return 0.004 * weight;
+		return 0.04 * weight;
 	} else if (age >= 1 && weight < 11) {
 		return 0.04 * weight;
 	} else if (age >= 1 && weight <= 15) {
 		return 0.03 * weight;
 	} else if (age >= 1 && weight > 15) {
 		return 0.02 * weight;
-	} else if (age < 1 && age >= .584) {
+	} else if (age < 1 && age >= .582) {
 		return weight * 0.04;
+	} else if (age >= 1) {
+		return weight * .04;
 	}
 }
 
-console.log(hungryDog(1, 15));
+console.log(hungryDog(15, 1));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -245,9 +249,21 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */) {
-	/*Your Code here */
+function grade(score) {
+	if (score >= 90 && score <= 100) {
+		return 'you got an A';
+	} else if (score >= 80 && score <= 89) {
+		return 'you got a B';
+	} else if (score >= 70 && score <= 79) {
+		return 'you got a C';
+	} else if (score >= 60 && score <= 69) {
+		return 'you got a D';
+	} else {
+		return 'you got an F';
+	}
 }
+
+console.log('task 7', grade(70));
 
 
 
